@@ -18,6 +18,7 @@ int main()
     }
 
     sort(myVector.begin(), myVector.end());
+    
     if(myVector[0] != 1){
         cout << 1;
         return 0;
