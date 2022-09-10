@@ -33,31 +33,26 @@ int main()
         return 0;
     }
 
-    string myString = "";
-
     for (int i = 0; i < 26; i++)
     {
-        if (i != oddIndex)
+        if (!(freq[i] % 2) && freq[i] != 0)
         {
-            myString = myString + string(freq[i] / 2, 'A' + i);
+            cout << string(freq[i] / 2, 'A' + i);
         }
     }
 
-    string output;
-
     if (oddCount == 1)
     {
-        output = myString + string(freq[oddIndex], 'A' + oddIndex);
-        reverse(myString.begin(), myString.end());
-        output = output + myString;
-    }
-    else
-    {
-        output = myString;
-        reverse(myString.begin(), myString.end());
-        output = output + myString;
+        cout << string(freq[oddIndex], 'A' + oddIndex);
     }
 
-    cout << output << endl;
+    for (int i = 25; i >= 0; i--)
+    {
+        if (!(freq[i] % 2) && freq[i] != 0)
+        {
+            cout << string(freq[i] / 2, 'A' + i);
+        }
+    }
+
     return 0;
 }
